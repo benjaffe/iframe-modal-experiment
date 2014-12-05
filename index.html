@@ -107,6 +107,14 @@
 
     <div class="modal-curtain"></div>
 
+    <div class="dialog">
+        Pretend that the blue page in the back is the classroom.
+        This is the modal that tests your code, and you can resize
+        the "fake browser" to see the breakpoints rendered. Additionally,
+        there could be buttons that change the fake browser to look like
+        a phone and tablet and simulate those interactions.
+    </div>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script>
@@ -114,6 +122,14 @@
         containment: "#responsive-iframe-modal",
         minWidth: 200,
         minHeight: 200
+    });
+
+    $( ".dialog" ).dialog({
+      show: {
+        effect: "blind",
+        modal: true,
+        duration: 400
+      }
     });
     </script>
 </body>

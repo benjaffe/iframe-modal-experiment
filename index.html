@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classroom</title>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <style>
+
+    .modal-curtain {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.2);
+        z-index: -1;
+    }
+
+    .modal-full {
+        position: fixed;
+        top: 5%;
+        bottom: 5%;
+        left: 5%;
+        right: 5%;
+    }
+
+    .responsive-iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .iframe-wrapper {
+        height:80%;
+    }
+
+    .focus-retainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Classroom</h1>
+
+    <div class="modal-full" id="responsive-iframe-modal">
+        <div class="resizable iframe-wrapper">
+            <div class="focus-retainer"></div>
+            <iframe class="responsive-iframe" src="http://froont.com/" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class="modal-curtain"></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script>
+    $('.resizable').resizable({
+        containment: "#responsive-iframe-modal",
+        minWidth: 200,
+        minHeight: 200
+    });
+    </script>
+</body>
+</html>

@@ -51,6 +51,7 @@
         left: 0;
         right: 0;
         bottom: 0;
+        pointer-events:none;
     }
 
     .browser-chrome {
@@ -121,7 +122,13 @@
     $('.resizable').resizable({
         containment: "#responsive-iframe-modal",
         minWidth: 200,
-        minHeight: 200
+        minHeight: 200,
+        start: function( event, ui ) {
+            $('.focus-retainer').css('pointer-events','auto');
+        },
+        stop: function( event, ui ) {
+            $('.focus-retainer').css('pointer-events','none');
+        }
     });
 
     $( ".dialog" ).dialog({

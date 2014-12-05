@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <style>
 
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #CCF;
+    }
+
     .modal-curtain {
         position: fixed;
         top: 0;
@@ -22,15 +30,19 @@
         bottom: 5%;
         left: 5%;
         right: 5%;
+        padding:20px;
+        background-color: #FFF;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    }
+
+    .iframe-wrapper {
+        height:80%;
+        border: solid 1px black;
     }
 
     .responsive-iframe {
         width: 100%;
         height: 100%;
-    }
-
-    .iframe-wrapper {
-        height:80%;
     }
 
     .focus-retainer {
@@ -41,6 +53,40 @@
         bottom: 0;
     }
 
+    .browser-chrome {
+        position: relative;
+        width:100%;
+        height:40px;
+        background: #DDD;
+        border-bottom: solid 1px #999;
+        padding:5px 10px;
+    }
+    .browser-chrome .urlbar {
+        position:absolute;
+        top:5px;
+        bottom:5px;
+        left:90px;
+        right:5px;
+        background-color: #FFF;
+        font-family: sans-serif;
+        padding:5px;
+    }
+    .browser-chrome span {
+        font-size: 30px;
+        text-shadow: 0px 0px 1px rgba(0,0,0,1);
+        position:relative;
+        top:-10px;
+        left:-4px;
+        margin-right:2px;
+    }
+    .browser-content {
+        position: absolute;
+        top: 40px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
     </style>
 </head>
 <body>
@@ -48,8 +94,14 @@
 
     <div class="modal-full" id="responsive-iframe-modal">
         <div class="resizable iframe-wrapper">
-            <div class="focus-retainer"></div>
-            <iframe class="responsive-iframe" src="http://froont.com/" frameborder="0"></iframe>
+            <div class="browser-chrome">
+                <span style="color:#F88">&#9679;</span> <span style="color:#FF8">&#9679;</span> <span style="color:#5D5">&#9679;</span>
+                <div class="urlbar">http://myawesomesite.com</div>
+            </div>
+            <div class="browser-content">
+                <div class="focus-retainer"></div>
+                <iframe class="responsive-iframe" src="http://froont.com/" frameborder="0"></iframe>
+            </div>
         </div>
     </div>
 
